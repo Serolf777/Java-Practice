@@ -1,14 +1,38 @@
 public class testFile {
-  public testFile() {
-    System.out.println("I am inside the constructor method.");
+
+  int number;
+
+  public testFile(int initialNumber) {
+    number = initialNumber;
+    System.out.println("The initial number is " +number);
   }
-  
-  // main method
+
+  public void doubleNumber() {
+    int newNumber = number * 2;
+    number = newNumber;
+    System.out.println("The new number is "+number);
+  }
+
+  public void halfNumber() {
+    int newNumber = number / 2;
+    number = newNumber;
+    System.out.println("The new number is "+number);
+  }
+
+  public int addNumber(int amountToAdd) {
+    int newNumber = number + amountToAdd;
+    number = newNumber;
+    System.out.println("The new number is "+number);
+    return amountToAdd;
+  }
+
+// main method
   public static void main(String[] args) {
-    System.out.println("This code is inside the main method.");
-    
-    testFile test = new testFile();
-    
-    System.out.println(test);
+    testFile testNumber = new testFile(100);
+
+    testNumber.doubleNumber();
+    testNumber.halfNumber();
+    testNumber.addNumber(500);
+
   }
 }
