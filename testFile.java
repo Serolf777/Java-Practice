@@ -21,15 +21,23 @@ public class testFile {
   }
 
   public void halfNumber() {
+    if (number < 0) {
+      System.out.println("This is a negative number! We can't halve this!");
+      return;
+    }
     int newNumber = number / 2;
     number = newNumber;
     System.out.println("The new number is "+number);
   }
 
   public int addNumber(int amountToAdd) {
+    int oldNumber = number;
     int newNumber = number + amountToAdd;
     number = newNumber;
     System.out.println("The new number is "+number);
+    if (oldNumber < 0 && newNumber >= 0){
+      System.out.println("You're no longer in debt!");
+    }
     return amountToAdd;
   }
 
@@ -42,6 +50,7 @@ public class testFile {
     testNumber.addNumber(500);
 
     testFile newTest = new testFile(-20);
-
+    newTest.halfNumber();
+    newTest.addNumber(500);
   }
 }
