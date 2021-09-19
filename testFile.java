@@ -5,6 +5,13 @@ public class testFile {
   public testFile(int initialNumber) {
     number = initialNumber;
     System.out.println("The initial number is " +number);
+    if (number > 0) {
+      System.out.println("This is a positive number!");
+    } else if (number < 0) {
+      System.out.println("Starting out with a negative balance, huh?");
+    } else {
+      System.out.println("How'd you get here?");
+    }
   }
 
   public void doubleNumber() {
@@ -33,6 +40,8 @@ public class testFile {
     testNumber.doubleNumber();
     testNumber.halfNumber();
     testNumber.addNumber(500);
+
+    testFile newTest = new testFile(-20);
 
   }
 }
